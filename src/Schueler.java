@@ -1,4 +1,4 @@
-public class Schueler {
+public class Schueler{
 
     String name;
 
@@ -18,4 +18,7 @@ public class Schueler {
     public String toString() {
         return "Schueler{" + "name='" + name + '\'' + '}';
     }
+
+
+
 }

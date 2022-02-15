@@ -1,17 +1,18 @@
-public class Linearlist {
+public class Linearlist<T> {
 
-    int value;
-    Linearlist pnew;
-     int count = 0;
+    T value;
+    Linearlist<T> pnew;
+    int count = 0;
+    static int realcount;
 
-    public Linearlist(int i) {
+    public Linearlist(T i) {
         value = i;
 
     }
 
-    public void add(int i) {
+    public void add(T i) {
         if (pnew == null) {
-            pnew = new Linearlist(i);
+            pnew = new Linearlist<>(i);
             count++;
         } else {
             pnew.add(i);
@@ -29,6 +30,18 @@ public class Linearlist {
 
     }
 
+    public int count() {
+
+        if (pnew != null) {
+            realcount++;
+            pnew.count();
+
+        }else{
+            realcount++;
+        }
+
+        return realcount;
+    }
 
     public void get(int i) {
 
