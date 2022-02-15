@@ -1,3 +1,5 @@
+import org.w3c.dom.Node;
+
 import java.util.Iterator;
 import java.util.Spliterator;
 import java.util.function.Consumer;
@@ -7,6 +9,8 @@ public class Linearlist<T> implements  Iterable<T> {
     T value;
     Linearlist<T> pnew;
     int count = 0;
+    Linearlist<T> head;
+
 
 
     public Linearlist(T i) {
@@ -15,7 +19,9 @@ public class Linearlist<T> implements  Iterable<T> {
     }
 
     public void add(T i) {
+
         if (pnew == null) {
+
             pnew = new Linearlist<>(i);
             count++;
         } else {
@@ -58,20 +64,9 @@ public class Linearlist<T> implements  Iterable<T> {
 
     @Override
     public Iterator<T> iterator() {
-        if(pnew!=null) {
-            return this.pnew.iterator();
-        }else{
-            return this.iterator();
-        }
+
+       return new CustomIterator<>(this) ;
     }
 
-    @Override
-    public void forEach(Consumer<? super T> action) {
-        Iterable.super.forEach(action);
-    }
 
-    @Override
-    public Spliterator<T> spliterator() {
-        return Iterable.super.spliterator();
-    }
 }
