@@ -2,7 +2,7 @@ import java.util.Iterator;
 import java.util.Spliterator;
 import java.util.function.Consumer;
 
-public class Linearlist<T> {
+public class Linearlist<T> implements  Iterable<T> {
 
     T value;
     Linearlist<T> pnew;
@@ -56,4 +56,22 @@ public class Linearlist<T> {
     }
 
 
+    @Override
+    public Iterator<T> iterator() {
+        if(pnew!=null) {
+            return this.pnew.iterator();
+        }else{
+            return this.iterator();
+        }
+    }
+
+    @Override
+    public void forEach(Consumer<? super T> action) {
+        Iterable.super.forEach(action);
+    }
+
+    @Override
+    public Spliterator<T> spliterator() {
+        return Iterable.super.spliterator();
+    }
 }
