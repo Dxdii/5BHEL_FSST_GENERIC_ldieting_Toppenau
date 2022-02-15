@@ -5,4 +5,4 @@
 Erstellen des Repositories
 Erstellen der Main und Schueler klasse + test der Funktionen von Linlist
 # ldieting
-erstellen der linlist funktionen zu erst int dann mit generics
+erstellen der linlist funktionen zu erst int dann mit generics+Iterable implementiert
