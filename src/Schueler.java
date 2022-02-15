@@ -6,11 +6,11 @@ public class Schueler {
         this.name = n;
     }
 
-    public void setName(String name) {
+    public void insert(String name) {
         this.name = name;
     }
 
-    public String getName() {
+    public String printall() {
         return name;
     }
 
