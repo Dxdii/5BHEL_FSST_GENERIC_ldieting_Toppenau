@@ -5,6 +5,6 @@ public class Main {
     root.add(4);
     root.add(5);
     root.Printall();
-    root.get(3);
+    root.get(4);
     }
 }

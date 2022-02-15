@@ -2,7 +2,7 @@ public class Linearlist {
 
     int value;
     Linearlist pnew;
-    int count;
+     int count = 0;
 
     public Linearlist(int i) {
         value = i;
@@ -23,17 +23,23 @@ public class Linearlist {
         System.out.println(value);
         if (pnew != null) {
             pnew.Printall();
+
         }
 
 
     }
 
+
     public void get(int i) {
+
         if (count == i) {
             System.out.println(value);
 
         } else {
+            count++;
+            pnew.count = count;
             pnew.get(i);
+
         }
     }
 }
