@@ -1,9 +1,13 @@
+import java.util.Iterator;
+import java.util.Spliterator;
+import java.util.function.Consumer;
+
 public class Linearlist<T> {
 
     T value;
     Linearlist<T> pnew;
     int count = 0;
-    static int realcount;
+
 
     public Linearlist(T i) {
         value = i;
@@ -24,23 +28,18 @@ public class Linearlist<T> {
         System.out.println(value);
         if (pnew != null) {
             pnew.Printall();
-
         }
-
-
     }
 
     public int count() {
 
         if (pnew != null) {
-            realcount++;
-            pnew.count();
-
-        } else {
-            realcount++;
+            count++;
+            pnew.count = count;
+            count = pnew.count();
         }
 
-        return realcount;
+        return count;
     }
 
     public void get(int i) {
@@ -55,4 +54,6 @@ public class Linearlist<T> {
 
         }
     }
+
+
 }
