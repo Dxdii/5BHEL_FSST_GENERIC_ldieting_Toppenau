@@ -36,7 +36,7 @@ public class Linearlist<T> {
             realcount++;
             pnew.count();
 
-        }else{
+        } else {
             realcount++;
         }
 
