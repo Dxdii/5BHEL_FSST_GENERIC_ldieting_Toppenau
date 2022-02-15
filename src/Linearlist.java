@@ -1,27 +1,22 @@
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-
 public class Linearlist{
-  int value;
-  int Element;
-  static int count = 0;
+
+  int plast;
+  int pnew;
+
+
 
     public Linearlist(int i){
-        Element = i;
-        count++;
+       pnew = i;
     }
-    public void add(int i){
-    value = i;
+    public void add(Linearlist a){
+      plast = a.plast;
     }
     public void Printall(){
+      System.out.println(pnew);
 
     }
     public void get(int i)
     {
-
-        System.out.println();
 
     }
 
