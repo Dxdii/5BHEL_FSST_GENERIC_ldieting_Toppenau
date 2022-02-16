@@ -4,5 +4,6 @@
 # Toppenauer:
 Erstellen des Repositories
 Erstellen der Main und Schueler klasse + test der Funktionen von Linlist
+Klasse Schüler comparable Interface implementiert.
 # ldieting
 erstellen der linlist funktionen zu erst int dann mit generics+Iterable implementiert

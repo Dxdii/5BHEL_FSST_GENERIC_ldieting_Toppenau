@@ -1,4 +1,4 @@
-public class Schueler{
+public class Schueler implements Comparable<Schueler>{
 
     String name;
 
@@ -20,5 +20,8 @@ public class Schueler{
     }
 
 
-
+    @Override
+    public int compareTo(Schueler o) {
+        return this.name.compareTo(o.name);
+    }
 }
