@@ -1,16 +1,11 @@
-import org.w3c.dom.Node;
-
 import java.util.Iterator;
-import java.util.Spliterator;
-import java.util.function.Consumer;
 
-public class Linearlist<T> implements  Iterable<T> {
+public class Linearlist<T> implements Iterable<T> {
 
     T value;
     Linearlist<T> pnew;
     int count = 0;
-    Linearlist<T> head;
-
+    Linearlist<T> ptail;
 
 
     public Linearlist(T i) {
@@ -21,10 +16,10 @@ public class Linearlist<T> implements  Iterable<T> {
     public void add(T i) {
 
         if (pnew == null) {
-
             pnew = new Linearlist<>(i);
             count++;
         } else {
+            ptail = pnew;
             pnew.add(i);
 
         }
@@ -35,6 +30,14 @@ public class Linearlist<T> implements  Iterable<T> {
         if (pnew != null) {
             pnew.Printall();
         }
+    }
+
+    public void addtail(int i,T d) {
+        if(i>0){
+            pnew = ptail;
+            pnew.add(d);
+        }
+
     }
 
     public int count() {
@@ -65,7 +68,7 @@ public class Linearlist<T> implements  Iterable<T> {
     @Override
     public Iterator<T> iterator() {
 
-       return new CustomIterator<>(this) ;
+        return new CustomIterator<>(this);
     }
 
 
